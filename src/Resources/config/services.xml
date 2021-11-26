@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Swag\ExamplePlugin\Core\Checkout\Customer\Subscriber\BusinessEventCollectorSubscriber">
+            <argument type="service" id="Shopware\Core\Framework\Event\BusinessEventCollector"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Swag\ExamplePlugin\Core\Content\Flow\Dispatching\Action\CreateTagAction">
+            <argument type="service" id="tag.repository" />
+            <tag name="kernel.event_subscriber"/>
+            <tag name="flow.action" priority="600"/>
+        </service>
+
+        <service id="Swag\ExamplePlugin\Core\Content\Flow\Subscriber\BusinessEventCollectorSubscriber">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+</container>

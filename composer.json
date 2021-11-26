@@ -1,0 +1,26 @@
+{
+    "name": "swag/example-plugin-flow-trigger",
+    "description": "Example plugin",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shopware"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Swag\\ExamplePlugin\\": "src/"
+        }
+    },
+    "require": {
+        "shopware/core": "^6.4.6"
+    },
+    "extra": {
+        "shopware-plugin-class": "Swag\\ExamplePlugin\\ExamplePlugin",
+        "label": {
+            "de-DE": "Example plugin",
+            "en-GB": "Example plugin"
+        }
+    }
+}
