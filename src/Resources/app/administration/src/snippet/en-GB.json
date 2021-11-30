@@ -1,0 +1,9 @@
+{
+    "swag-example-plugin": {
+        "titleCreateTag": "Create tag",
+        "labelTags": "Tags",
+        "buttonSaveAction": "Save action",
+        "buttonAddAction": "Add action",
+        "descriptionTags": "Tags: {tags}"
+    }
+}
