@@ -1,0 +1,41 @@
+{% block swag_example_plugin_modal %}
+    <sw-modal
+        class="swag-example-plugin-modal"
+        :title="$tc('swag-example-plugin.titleCreateTag')"
+        @modal-close="onClose"
+    >
+        {% block swag_example_plugin_modal_content %}
+            <sw-multi-tag-select
+                v-model="tags"
+                :label="$tc('swag-example-plugin.labelTags')"
+            />
+        {% endblock %}
+
+        {% block swag_example_plugin_modal_footer %}
+            <template #modal-footer>
+                {% block swag_example_plugin_modal_footer_cancel_button %}
+                    <sw-button
+                        class="swag-example-plugin-modal__cancel-button"
+                        size="small"
+                        @click="onClose"
+                    >
+                        {{ $tc('global.default.cancel') }}
+                    </sw-button>
+                {% endblock %}
+
+                {% block swag_example_plugin_modal_footer_save_button %}
+                    <sw-button
+                        class="swag-example-plugin-modal__save-button"
+                        variant="primary"
+                        size="small"
+                        @click="onAddAction"
+                    >
+                        {{ sequence.id
+                        ? $tc('swag-example-plugin.buttonSaveAction')
+                        : $tc('swag-example-plugin.buttonAddAction') }}
+                    </sw-button>
+                {% endblock %}
+            </template>
+        {% endblock %}
+    </sw-modal>
+{% endblock %}
