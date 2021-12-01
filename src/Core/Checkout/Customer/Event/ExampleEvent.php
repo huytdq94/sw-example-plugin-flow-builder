@@ -5,12 +5,14 @@ namespace Swag\ExamplePlugin\Core\Checkout\Customer\Event;
 use Shopware\Core\Checkout\Customer\CustomerDefinition;
 use Shopware\Core\Checkout\Customer\CustomerEntity;
 use Shopware\Core\Framework\Context;
+use Shopware\Core\Framework\Event\BusinessEvent;
+use Shopware\Core\Framework\Event\BusinessEventInterface;
 use Shopware\Core\Framework\Event\CustomerAware;
 use Shopware\Core\Framework\Event\EventData\EntityType;
 use Shopware\Core\Framework\Event\EventData\EventDataCollection;
 use Symfony\Contracts\EventDispatcher\Event;
 
-class ExampleEvent extends Event implements CustomerAware
+class ExampleEvent extends Event implements CustomerAware, BusinessEventInterface
 {
     public const EVENT_NAME = 'example.event';
 
